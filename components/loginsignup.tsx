@@ -101,27 +101,38 @@ const LoginSignup = () => {
         <Toaster richColors position="top-center" />
         {loginVisible && (
           <div className="Loginheader">
-            <h3>Login</h3>
+            <h3>☃️ Login 🎄</h3>
             <div className="Logininputs">
               <div className="Loginusername">
                 <Image
                   className="person"
-                  src="/person.png"
-                  width={20}
-                  height={21}
+                  src="/jumping-santa.png"
+                  width={28}
+                  height={27}
                   alt=""
+                  title="SANTA IS BHOPPING"
                 />
-                <input id="name" name="name" type="text" />
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="username"
+                />
               </div>
               <div className="Loginpassword">
                 <Image
                   className="password"
-                  src="/password.png"
-                  width={19}
-                  height={22}
+                  src="/xmas-locked.png"
+                  width={30}
+                  height={29}
                   alt=""
                 />
-                <input type="password" id="password" name="password" />
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="password"
+                />
               </div>
             </div>
             <div className="Loginbuttons">
@@ -144,27 +155,38 @@ const LoginSignup = () => {
         )}
         {!loginVisible && (
           <div className="Loginheader">
-            <h3>Register</h3>
+            <h3>🤶🏿Register</h3>
             <div className="Logininputs">
               <div className="Loginusername">
                 <Image
                   className="person"
-                  src="person.png"
-                  width={20}
-                  height={21}
+                  src="/candy-cane.png"
+                  width={28}
+                  height={27}
                   alt=""
+                  title="SANTA IS BHOPPING"
                 />
-                <input id="name1" name="name1" type="text" />
+                <input
+                  id="name1"
+                  name="name1"
+                  type="text"
+                  placeholder="username"
+                />
               </div>
               <div className="Loginpassword">
                 <Image
                   className="password"
-                  src="password.png"
-                  width={19}
-                  height={22}
+                  src="/xmas-locked.png"
+                  width={30}
+                  height={29}
                   alt=""
                 />
-                <input type="password" id="password1" name="password1" />
+                <input
+                  type="password"
+                  id="password1"
+                  name="password1"
+                  placeholder="password"
+                />
               </div>
             </div>
             <div className="Loginbuttons">
@@ -179,8 +201,8 @@ const LoginSignup = () => {
             </div>
             <div className="Loginregister">
               <p>
-                Have Already an account?
-                <span onClick={toggleLoginPage}> Loggin</span>
+                Already have an account?
+                <span onClick={toggleLoginPage}> Login</span>
               </p>
             </div>
           </div>
@@ -191,10 +213,12 @@ const LoginSignup = () => {
             <div className="fab"></div>
             <div className="fac">
               <Link to="/">
-                <button>Map</button>
+                <button className="button-map-back-to-menu">
+                  <Image className="" src="" width={20} height={20} alt="" />
+                </button>
               </Link>
               <Link to="/admin">
-                <button>Admin</button>
+                <button className="admin-button-2">🤓</button>
               </Link>
             </div>
           </div>

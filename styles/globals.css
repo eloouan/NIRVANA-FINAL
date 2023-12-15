@@ -85,6 +85,13 @@ a {
   padding: 0.5rem;
 }
 
+.combobox-input.input-field {
+  border: 2px solid white;
+  padding: 8px;
+  border-radius: 16px;
+  position: relative;
+}
+
 .marker-type-input-bar {
   position: absolute;
   left: 300px;
@@ -95,11 +102,11 @@ a {
   top: -23px;
   left: 25px;
   width: 15%;
-  height: 21%; /* Set an appropriate height */
+  height: 21%;
   background-image: url('images/snow-roof-long.png');
-  background-size: contain; /* cover or contain */
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position:center;
+  background-position: center;
 }
 
 .candy-cane {
@@ -142,14 +149,14 @@ a {
 }
 
 .login-button {
-  background-image: url('images/not-logged-icon.png');
-  height: 30px;
-  width: 30px;
-  background-size: cover;
-  background-color: white;
-  border: 2px solid white;
+  background-image: url('images/santa-profile.png');
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  background-size: contain;
+  background-color: transparent;
+  border: 2px solid transparent;
   border-radius: 14px;
-  color: white;
   padding: 10px;
   cursor: pointer;
 }
@@ -214,8 +221,8 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('images/locked.png') center center/cover no-repeat;
-  background-size: 78%;
+  background: url('images/xmas-locked.png') center center/cover no-repeat;
+  background-size: 90%;
   background-color: rgba(57, 60, 64, 0.5);
   border-radius: inherit; 
   z-index: 1;
@@ -257,136 +264,6 @@ a {
 
 .recenter-button:hover {
   background-color: rgb(179, 207, 231);
-  transform: scale(1.2);
-}
-
-.filter-menu {
-  position: absolute;
-  top: 35px;
-  left: 700px;
-  display: flex; /* Use flex to arrange checkboxes in a row */
-  flex-wrap: wrap; /* Allow items to wrap onto the next line */
-}
-
-.filter-item {
-  margin-right: 8px; /* Adjust as needed for horizontal separation */
-  margin-bottom: 8px; /* Adjust as needed for vertical separation */
-}
-
-.filter-label {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.377);
-  border-radius: 10px;
-  backdrop-filter: blur(8px);
-  transition: background-size 0.3s ease-in-out, transform 0.3s, background-color 0.3s ease
-}
-  
-.filter-item input[type="checkbox"] {
-  display: none;
-}
-
-/* Style for the checked state */
-.filter-label input:checked {
-  background-color: #333 !important;
-}
-
-.filter-item:nth-child(1) .filter-label:hover {
-  background-color: rgba(57, 180, 221, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(2) .filter-label:hover {
-  background-color: rgba(24, 119, 191, 0.8);
-  transform: scale(1.2);
-}
-.filter-item:nth-child(3) .filter-label:hover {
-  background-color: rgba(16, 188, 162, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(4) .filter-label:hover {
-  background-color: rgba(118, 151, 183, 0.8);
-  transform: scale(1.2);
-}
-.filter-item:nth-child(5) .filter-label:hover {
-  background-color: rgba(216, 168, 109, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(6) .filter-label:hover {
-  background-color: rgba(220, 144, 144, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(7) .filter-label:hover {
-  background-color: rgba(127, 161, 224, 0.8);
-  transform: scale(1.2);
-}
-.filter-item:nth-child(8) .filter-label:hover {
-  background-color: rgba(57, 180, 221, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(9) .filter-label:hover {
-  background-color: rgba(24, 119, 191, 0.8);
-  transform: scale(1.2);
-}
-.filter-item:nth-child(10) .filter-label:hover {
-  background-color: rgba(16, 188, 162, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(11) .filter-label:hover {
-  background-color: rgba(118, 151, 183, 0.8);
-  transform: scale(1.2);
-}
-.filter-item:nth-child(12) .filter-label:hover {
-  background-color: rgba(216, 168, 109, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(13) .filter-label:hover {
-  background-color: rgba(220, 144, 144, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(14) .filter-label:hover {
-  background-color: rgba(127, 161, 224, 0.8);
-  transform: scale(1.2);
-}
-.filter-item:nth-child(15) .filter-label:hover {
-  background-color: rgba(57, 180, 221, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(16) .filter-label:hover {
-  background-color: rgba(24, 119, 191, 0.8);
-  transform: scale(1.2);
-}
-.filter-item:nth-child(17) .filter-label:hover {
-  background-color: rgba(16, 188, 162, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(18) .filter-label:hover {
-  background-color: rgba(118, 151, 183, 0.8);
-  transform: scale(1.2);
-}
-.filter-item:nth-child(19) .filter-label:hover {
-  background-color: rgba(216, 168, 109, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(20) .filter-label:hover {
-  background-color: rgba(220, 144, 144, 0.8);
-  transform: scale(1.2);
-}
-
-.filter-item:nth-child(21) .filter-label:hover {
-  background-color: rgba(127, 161, 224, 0.8);
   transform: scale(1.2);
 }
 
@@ -671,11 +548,15 @@ a {
 }
 
 .Loginheader input::placeholder {
-  color: #ddd;
+  color: #ffffff;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
 }
 
+
 p {
-  color: #ddd;
+  color: #ffffff;
 }
 
 .Logincontainer {
@@ -748,7 +629,7 @@ a:hover {
   transition: all 0.5s;
   background-color: #fff;
   text-align: center;
-  color: #a3b18a;
+  color: #000000;
 }
 
 .Loginbtn-box a:hover {
@@ -759,7 +640,7 @@ a:hover {
   justify-content: center;
   font-style: 0.75rem;
   margin-top: 4rem;
-  color: #a3b18a;
+  color: #ffffff;
 }
 
 /* FIN DU CSS LOGIN COMPONENT */
@@ -922,3 +803,177 @@ a:hover {
   }
 }
 /*FIN DU CSS MENU BUTTON */
+
+.button-map-back-to-menu{
+  background-image: url('images/map-map-marker-icon.png');
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 32px;
+  border: transparent;
+  border-radius: 35%;
+  background-color: transparent;
+}
+
+.admin-button-1, .admin-button-2{
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 160%;
+}
+
+.filter-toggle{
+  position: fixed;
+  top: 30px;
+  left: 30%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-toggle button {
+  background-color: rgba(81, 114, 160, 0.8);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: solid 2px rgba(57, 75, 105, 0.7);
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: flex;
+  transition: background-size 0.3s ease-in-out, transform 0.3s, background-color 0.3s ease
+}
+.filter-toggle button:hover {
+  background-color: rgba(81, 114, 160, 0.9);
+  transform: scale(1.1);
+}
+
+.filter-menu {
+  position: absolute;
+  top: 58px;
+  right: 33%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-item {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.filter-label {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.377);
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  transition: background-size 0.3s ease-in-out, transform 0.3s, background-color 0.3s ease
+}
+  
+.filter-item input[type="checkbox"] {
+  display: none;
+}
+
+/* Style for the checked state */
+.filter-label input:checked {
+  background-color: #333 !important;
+}
+
+.filter-item:nth-child(1) .filter-label:hover {
+  background-color: rgba(57, 180, 221, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(2) .filter-label:hover {
+  background-color: rgba(24, 119, 191, 0.8);
+  transform: scale(1.2);
+}
+.filter-item:nth-child(3) .filter-label:hover {
+  background-color: rgba(16, 188, 162, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(4) .filter-label:hover {
+  background-color: rgba(118, 151, 183, 0.8);
+  transform: scale(1.2);
+}
+.filter-item:nth-child(5) .filter-label:hover {
+  background-color: rgba(216, 168, 109, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(6) .filter-label:hover {
+  background-color: rgba(220, 144, 144, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(7) .filter-label:hover {
+  background-color: rgba(127, 161, 224, 0.8);
+  transform: scale(1.2);
+}
+.filter-item:nth-child(8) .filter-label:hover {
+  background-color: rgba(57, 180, 221, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(9) .filter-label:hover {
+  background-color: rgba(24, 119, 191, 0.8);
+  transform: scale(1.2);
+}
+.filter-item:nth-child(10) .filter-label:hover {
+  background-color: rgba(16, 188, 162, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(11) .filter-label:hover {
+  background-color: rgba(118, 151, 183, 0.8);
+  transform: scale(1.2);
+}
+.filter-item:nth-child(12) .filter-label:hover {
+  background-color: rgba(216, 168, 109, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(13) .filter-label:hover {
+  background-color: rgba(220, 144, 144, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(14) .filter-label:hover {
+  background-color: rgba(127, 161, 224, 0.8);
+  transform: scale(1.2);
+}
+.filter-item:nth-child(15) .filter-label:hover {
+  background-color: rgba(57, 180, 221, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(16) .filter-label:hover {
+  background-color: rgba(24, 119, 191, 0.8);
+  transform: scale(1.2);
+}
+.filter-item:nth-child(17) .filter-label:hover {
+  background-color: rgba(16, 188, 162, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(18) .filter-label:hover {
+  background-color: rgba(118, 151, 183, 0.8);
+  transform: scale(1.2);
+}
+.filter-item:nth-child(19) .filter-label:hover {
+  background-color: rgba(216, 168, 109, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(20) .filter-label:hover {
+  background-color: rgba(220, 144, 144, 0.8);
+  transform: scale(1.2);
+}
+
+.filter-item:nth-child(21) .filter-label:hover {
+  background-color: rgba(127, 161, 224, 0.8);
+  transform: scale(1.2);
+}

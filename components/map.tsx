@@ -168,7 +168,7 @@ const Map: React.FC<MapProps> = () => {
               lng: 5.919697965999837,
             },
           };
-          point_a_add.address = item.address; //// JE DOIS REBUILD UN POINT POUR ENFIN LE ADD DANS LE DEFAULT POI
+          point_a_add.address = item.address;
           point_a_add.description = item.description;
           point_a_add.type = item.type;
           point_a_add.position.lat = parseFloat(item.coordX);
@@ -180,6 +180,8 @@ const Map: React.FC<MapProps> = () => {
 
   const onLoadMap1 = useCallback((map) => (mapRefMap1.current = map), []);
   const onLoadMap2 = useCallback((map) => (mapRefMap2.current = map), []);
+
+  const [zoom, setZoom] = useState<number>(10);
 
   const fetchDirectionsMap1 = (house: LatLngLiteral) => {
     if (!officeMap1) return;
@@ -330,6 +332,34 @@ const Map: React.FC<MapProps> = () => {
     }
   };
 
+  const [showEntertainmentFilters, setShowEntertainmentFilters] =
+    useState(false);
+  const [showOutdoorsFilters, setShowOutdoorsFilters] = useState(false);
+  const [showFoodFilters, setShowFoodFilters] = useState(false);
+  const [showTravelFilters, setShowTravelFilters] = useState(false);
+  const [showOtherFilters, setShowOtherFilters] = useState(false);
+  const [showSportFilters, setShowSportFilters] = useState(false);
+
+  const handleToggleEntertainmentFilters = () => {
+    setShowEntertainmentFilters((prev) => !prev);
+  };
+
+  const handleToggleOutdoorsFilters = () => {
+    setShowOutdoorsFilters((prev) => !prev);
+  };
+  const handleToggleFoodFilters = () => {
+    setShowFoodFilters((prev) => !prev);
+  };
+  const handleToggleTravelFilters = () => {
+    setShowTravelFilters((prev) => !prev);
+  };
+  const handleToggleOtherFilters = () => {
+    setShowOtherFilters((prev) => !prev);
+  };
+  const handleToggleSportFilters = () => {
+    setShowSportFilters((prev) => !prev);
+  };
+
   return (
     <div className="container">
       <div className="controls">
@@ -354,13 +384,13 @@ const Map: React.FC<MapProps> = () => {
             mapContainerClassName="map-container"
             options={getMapOptions1({
               north: 45.7204559777248,
-              south: 45.46085230095994,
+              south: 45.5185230095994,
               west: 5.741038693653954,
               east: 6.073561468829906,
             })}
             onLoad={onLoadMap1}
           >
-            <MarkerClusterer>
+            <MarkerClusterer options={{ maxZoom: 17, gridSize: 30 }}>
               {(clusterer) => (
                 <div>
                   {defaultPoi.map((poi, index) => (
@@ -371,8 +401,8 @@ const Map: React.FC<MapProps> = () => {
                         clusterer={clusterer}
                         icon={{ url: markerIcons[poi.type as MarkerIconType] }}
                         onClick={() => {
-                          fetchDirectionsMap1(poi.position);
                           setSelectedMarker(poi);
+                          fetchDirectionsMap1(poi.position);
                         }}
                       />
                       {/* Personnalisation du marqueur ici */}
@@ -516,12 +546,81 @@ const Map: React.FC<MapProps> = () => {
                 <button className="login-button"></button>
               </Link>
               <Link to="/admin">
-                <button>Admin</button>
+                <button className="admin-button-1">🤓</button>
               </Link>
             </div>
           </div>
         </div>
 
+        <div className="filter-toggle">
+          <button
+            className="entertainment-button"
+            onClick={handleToggleEntertainmentFilters}
+          >
+            💃 Entertainment 🍿
+          </button>
+          <button
+            className="outdoors-button"
+            onClick={handleToggleOutdoorsFilters}
+          >
+            🚴 Outdoors 🌳
+          </button>
+          <button className="food-button" onClick={handleToggleFoodFilters}>
+            🥗 Food 🌭
+          </button>
+          <button className="travel-button" onClick={handleToggleTravelFilters}>
+            🧳 Travel 💲
+          </button>
+          <button className="other-button" onClick={handleToggleOtherFilters}>
+            💤 Other 🛐
+          </button>
+
+          {showFoodFilters && (
+            <FilterButton
+              markerTypes={["restaurant", "bakery", "bar", "ice cream shop"]}
+              displayTypes={["🍗", "🥐", "🍺", "🍦"]}
+              onClick={(type) => handleMarkerFilter(type)}
+            />
+          )}
+
+          {showEntertainmentFilters && (
+            <FilterButton
+              markerTypes={[
+                "cinema",
+                "theater",
+                "museum",
+                "tourist attraction",
+                "night club",
+              ]}
+              displayTypes={["🎥", "🎭", "🎨", "🗿", "🍸"]}
+              onClick={(type) => handleMarkerFilter(type)}
+            />
+          )}
+
+          {showOutdoorsFilters && (
+            <FilterButton
+              markerTypes={["park", "sport", "gym", "swimming pool", "beach"]}
+              displayTypes={["🌲", "🏓", "💪", "🏊", "⛱️"]}
+              onClick={(type) => handleMarkerFilter(type)}
+            />
+          )}
+
+          {showTravelFilters && (
+            <FilterButton
+              markerTypes={["shopping", "transport", "clothing store"]}
+              displayTypes={["🎁", "🚊", "👜"]}
+              onClick={(type) => handleMarkerFilter(type)}
+            />
+          )}
+
+          {showOtherFilters && (
+            <FilterButton
+              markerTypes={["school", "church", "hotel"]}
+              displayTypes={["👨‍🏫", "⛪", "🛏️"]}
+              onClick={(type) => handleMarkerFilter(type)}
+            />
+          )}
+        </div>
         <div className="map-buttons">
           <button
             className="map1-button"
@@ -539,53 +638,6 @@ const Map: React.FC<MapProps> = () => {
           ></button>
         </div>
         <button className="recenter-button" onClick={recenterMap}></button>
-        <FilterButton
-          markerTypes={[
-            "restaurant",
-            "shopping",
-            "cinema",
-            "school",
-            "park",
-            "gym",
-            "transport",
-            "bar",
-            "theater",
-            "swimming pool",
-            "ice cream shop",
-            "church",
-            "clothing store",
-            "bakery",
-            "hotel",
-            "museum",
-            "night club",
-            "tourist attraction",
-            "sport",
-            "beach",
-          ]}
-          displayTypes={[
-            "🍗",
-            "🎁",
-            "🎥",
-            "👨‍🏫",
-            "🌲",
-            "💪",
-            "🚊",
-            "🍺",
-            "🎭",
-            "🏊",
-            "🍦",
-            "⛪",
-            "👜",
-            "🥐",
-            "🛏️",
-            "🎨",
-            "🍸",
-            "🗿",
-            "🏓",
-            "⛱️",
-          ]}
-          onClick={(type) => handleMarkerFilter(type)}
-        />
       </div>
     </div>
   );

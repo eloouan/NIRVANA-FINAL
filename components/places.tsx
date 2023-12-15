@@ -34,7 +34,7 @@ export default function Places({ setOffice, createMarker }: PlacesProps) {
   const [markerType, setMarkerType] = useState<string>("default");
   const [isOptionSelected, setIsOptionSelected] = useState(false);
   const [showMarkerInput, setShowMarkerInput] = useState(false);
-  const [typeValue, setTypeValue] = useState<string>("default");
+  const [typeValue, setTypeValue] = useState<string>("");
 
   const handleMarkerTypeSelect = (selected: string) => {
     setMarkerType(selected);
@@ -93,7 +93,6 @@ export default function Places({ setOffice, createMarker }: PlacesProps) {
             <ComboboxOption value="tourist attraction 🗿" />
             <ComboboxOption value="sport 🏓" />
             <ComboboxOption value="beach ⛱️" />
-            setIsOptionSelected(false);
           </ComboboxList>
         </ComboboxPopover>
       </Combobox>
