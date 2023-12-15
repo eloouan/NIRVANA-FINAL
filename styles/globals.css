@@ -581,7 +581,10 @@ p {
     outline: none;
     border-style: none;
     background-color: transparent;
-    color: #ddd;
+    color: #ffffff;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
 }
 
 .Loginbuttons {
@@ -804,7 +807,7 @@ a:hover {
 }
 /*FIN DU CSS MENU BUTTON */
 
-.button-map-back-to-menu{
+.button-map-back-to-menu, .button-map-back-to-menu-2 {
   background-image: url('images/map-map-marker-icon.png');
   display: block;
   position: relative;
@@ -814,6 +817,7 @@ a:hover {
   border-radius: 35%;
   background-color: transparent;
 }
+
 
 .admin-button-1, .admin-button-2{
   background-color: transparent;
