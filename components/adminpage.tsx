@@ -24,16 +24,12 @@ const AdminPage = () => {
   return (
     <div className="Logincontainer">
       <h3>{headerText}</h3>
+      <button onClick={changeHeaderText}>🤡sacré bleu🤡</button>
       <img
         src="/Gigachad.png"
         alt=""
         style={{ width: "300px", height: "500px" }}
       />
-      <button onClick={changeHeaderText}>sacré bleu</button>
-
-      {/* Additional button, remove if not needed */}
-      {/* <button>sacré bleu</button> */}
-
       <div className="menu-button" style={{ bottom: "20px", right: "10px" }}>
         <div className="wrapper">
           <input type="checkbox" />
