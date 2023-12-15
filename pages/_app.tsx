@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
     <AuthProvider>
       <Head>
-        <title>💫Fuck Synchro💫</title>
+        <title>💫NIRVANA💫</title>
       </Head>
 
       {/* Utilisation de BrowserRouter à l'intérieur de useEffect pour éviter l'exécution côté serveur */}
